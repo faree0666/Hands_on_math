@@ -1,0 +1,1133 @@
+/* Base Styles - Apply to all screen sizes first */
+@font-face {
+  font-family: 'MoreSugar';
+  /* woff2 first for modern browsers, then woff as fallback */
+  src: url('../fonts/MoreSugar-Regular.woff2') format('woff2'),
+       url('../fonts/MoreSugar-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Poppins import should ideally be at the very top of your CSS,
+   or linked in your HTML <head> for better performance.
+   For example: <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+*/
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6; /* Improve readability */
+}
+
+/* General container for consistent width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding for smaller screens */
+}
+
+/* NAVBAR – teal blue */
+#navbar {
+  background: #006e7f;
+  color: white;
+  padding: 1.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #f8cb2e;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow it to grow */
+  margin-bottom: 0; /* Reset for larger screens */
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  margin-right: 15px; /* Space between logo and brand name */
+}
+
+.brand-name {
+  font-family: 'MoreSugar', cursive, sans-serif;
+  font-size: 2.8em;
+  color: white;
+  -webkit-text-stroke: 1px #FFD700;
+  text-stroke: 1px #FFD700;
+  text-shadow: 0 0 3px white;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Prevent breaking */
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0; /* Ensure no default padding */
+  flex-wrap: wrap; /* Allow nav items to wrap */
+  justify-content: flex-end; /* Align to the right on larger screens */
+}
+
+#navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+#navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* HERO SECTION (for the Home Page) */
+.hero {
+  background-image: url("../images/banner+small_3.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 764px; /* Consider using 'min-height' for flexibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Add text shadow for readability */
+}
+
+.hero .container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 90%; /* Adjust container width for smaller screens */
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+/* PAGE HERO SECTION (for the Activities Page) */
+.page-hero {
+  background-image: url("../images/math-icons-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Consider using 'min-height' */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Add text shadow for readability */
+}
+
+.page-hero .container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 90%; /* Adjust container width for smaller screens */
+}
+
+.page-hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.5em;
+}
+
+.page-hero p {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+/* Sections */
+section {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+/* WHO WE ARE – black text override */
+.who-we-are {
+  background: #26aca369;
+  color: #000000; /* force black text */
+}
+
+.who-we-are h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+
+.who-we-are p {
+  color: #000000;
+}
+
+/* Cards & Grids */
+.card, .activity-card, .blog-card {
+  background: #ffffff;
+  border: 2px solid #002244;
+  border-radius: 15px;
+  padding: 1.5em;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+}
+
+.card:hover, .activity-card:hover, .blog-card:hover {
+  transform: translateY(-6px);
+}
+
+.card img, .activity-card img, .blog-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  border-radius: 10px;
+}
+
+/* Blog Section */
+.blog-container {
+  text-align: center;
+  padding: 4em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptive columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  grid-column: 1 / -1; /* Spans all columns */
+  margin-bottom: 1.5em;
+  font-size: 2.5em;
+  color: #006e7f;
+}
+
+.blog-card h2 {
+  font-size: 1.8em;
+  color: #00796b;
+  margin: 1em 0;
+}
+
+.blog-card p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 1em;
+}
+
+.blog-card .read-more {
+  display: inline-block;
+  margin-top: 1em;
+  color: #0097a7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-card .read-more:hover {
+  text-decoration: underline;
+}
+
+/* Filter Section */
+.filter-section {
+  padding: 40px 0;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow filters to wrap */
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 150px; /* Give a base width for flex items */
+  flex-grow: 1; /* Allow them to grow */
+}
+
+.filter-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-group select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-width: 150px;
+  width: 100%; /* Make select boxes take full width of their group */
+}
+
+/* Activities Grid */
+.activities-grid {
+  padding: 20px 0 80px;
+}
+
+.activities-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptive columns */
+  gap: 30px;
+}
+
+.activity-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+}
+
+.activity-image {
+  position: relative;
+}
+
+.free-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f8cb2e;
+  color: #006e7f;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.activity-content {
+  padding: 20px;
+}
+
+.activity-content h3 {
+  color: #006e7f;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background-color: #f5f5f5;
+  color: #666;
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.activity-content p {
+  margin-bottom: 20px;
+}
+
+/* Activity Detail Page */
+.activity-detail {
+  padding: 40px 0 80px;
+}
+
+.activity-breadcrumb {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.activity-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.activity-title {
+  flex: 1;
+  min-width: 300px;
+}
+
+.activity-title h1 {
+  color: #006e7f;
+  margin-bottom: 15px;
+}
+
+.activity-image {
+  flex: 2;
+  min-width: 300px;
+}
+
+.activity-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.activity-description {
+  flex: 2;
+  min-width: 300px;
+  text-align: left; /* This will left-align the content */
+}
+
+.activity-description h2 {
+  color: #006e7f;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.activity-description h2:first-child {
+  margin-top: 0;
+}
+
+.activity-description p,
+.activity-description ul,
+.activity-description ol,
+.activity-description li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.activity-description ul,
+.activity-description ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.activity-sidebar {
+  flex: 1;
+  min-width: 250px;
+}
+
+.download-card, .related-activities {
+  background-color: #f5f5f5;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.download-card h3, .related-activities h3 {
+  color: #006e7f;
+  margin-bottom: 15px;
+}
+
+.related-activity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.related-activity img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.related-activity h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form textarea {
+  padding: 1em;
+  margin: 0.5em 0;
+  border: 2px solid #4dd0e1;
+  border-radius: 10px;
+  font-size: 1em;
+  width: calc(100% - 20px); /* Account for padding */
+}
+
+/* Buttons */
+.btn {
+  background: #002244;
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: background 0.3s ease;
+  text-decoration: none; /* Ensure buttons that are <a> tags are also styled */
+  display: inline-block; /* For the small buttons to work with padding */
+}
+
+.btn:hover {
+  background: #0097a7;
+}
+
+.btn-small {
+  padding: 0.7em 1.2em;
+  font-size: 0.9em;
+}
+
+/* Footer */
+footer {
+  background-color: #006e7f;
+  color: #ffffff;
+  padding: 60px 0 20px;
+}
+
+#footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  gap: 2em;
+}
+
+#footer .footer-content > div {
+  flex: 1 1 200px;
+  margin-bottom: 20px; /* Add margin for wrapping elements */
+}
+
+/* ── Quick-Links Hover ──────────────────────────────────────────────── */
+#footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .footer-links li {
+  margin-bottom: 0.5em;
+}
+#footer .footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+#footer .footer-links a:hover {
+  color: #f8cb2e;
+}
+
+/* ── Social Icons ──────────────────────────────────────────────────── */
+#footer .social-icons a {
+  color: #fff;
+  margin-right: 1em;
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+#footer .social-icons a:hover {
+  color: #f8cb2e;
+  transform: scale(1.2);
+}
+
+/* ── Bottom Bar ────────────────────────────────────────────────────── */
+#footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+  text-align: left;
+  font-size: 0.9em;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Popup */
+/* Popup - Default hidden state */
+.popup {
+  display: none; /* This must be the final default state */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* High z-index to be on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* Remove display:flex here, or ensure it's overridden by display:none */
+  justify-content: center; /* These will only apply when display is not 'none' */
+  align-items: center;   /* These will only apply when display is not 'none' */
+}
+.popup-content {
+  background-color: #fefefe;
+  margin: auto; /* Center vertically and horizontally */
+  padding: 30px; /* Increased padding for better spacing */
+  border: 1px solid #888;
+  width: 90%; /* Adjusted for smaller screens */
+  max-width: 800px; /* Increased max-width for better blog content viewing */
+  border-radius: 20px; /* More rounded corners! */
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Added a subtle shadow */
+}
+
+.close-popup {
+  color: #aaa;
+  float: right;
+  font-size: 30px; /* Slightly larger close button */
+  font-weight: bold;
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 20px; /* Adjusted position */
+  cursor: pointer;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+  color: #333; /* Darker color on hover */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#popup-blog-content {
+  text-align: left; /* Align text within the popup content */
+}
+
+#popup-blog-content h3 {
+  margin-top: 0;
+  color: #006e7f; /* Consistent with your existing heading style */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="email"],
+.form-group select {
+  width: 100%; /* Make them take full width of their container */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-group.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-group.checkbox input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* CSS for the Get in Touch Banner */
+.get-in-touch-banner {
+  background-color: #f0f0f0;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.get-in-touch-banner h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.get-in-touch-banner p {
+  font-size: 1.1em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-section {
+  padding: 4em 2em;
+  text-align: left; /* This will left-align content within the section */
+}
+
+.contact-section .contact-form {
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 400px; /* Limit form width */
+}
+
+.faq-section {
+  padding: 4em 2em;
+  text-align: left; /* This will left-align content within the FAQ section */
+}
+
+/* Fun Facts */
+.fun-facts {
+  background: #e0f7fa;
+  padding: 3em 1em;
+  text-align: center;
+}
+
+.fun-facts h2 {
+  font-size: 2em;
+  color: #00796b;
+}
+
+.carousel {
+  margin-top: 1em;
+  position: relative;
+  min-height: 60px;
+}
+
+.fact {
+  display: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #00695c;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.fact.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to  {opacity: 1;}
+}
+
+/* Offerings Section */
+.offerings {
+  padding: 4em 0;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.offerings h2 {
+  font-size: 2.8em;
+  color: #006e7f;
+  margin-bottom: 1.5em;
+}
+
+/* Offer Carousel */
+.offer-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 95%; /* Adjusted max-width to allow buttons to be visible */
+  padding: 0 40px; /* Add padding for buttons to show inside */
+}
+
+.offer-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+  padding-bottom: 1em;
+}
+
+.offer-carousel .card {
+  flex: 0 0 300px; /* Adjusted card width */
+  margin-right: 2em;
+  background-color: #fff;
+  padding: 1.5em;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.offer-carousel .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Images in Cards */
+.offer-track .card img {
+  border-radius: 10px;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card Text */
+.offer-carousel .card h3 {
+  color: #006e7f;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+.offer-carousel .card p {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Navigation Buttons */
+.offer-prev,
+.offer-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00796b;
+  color: #fff;
+  border: none;
+  width: 3em;
+  height: 3em;
+  font-size: 1.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-prev:hover,
+.offer-next:hover {
+  opacity: 1;
+  background-color: #005f56;
+}
+
+.offer-prev {
+  left: 0; /* Position buttons at the edge of the padding */
+}
+
+.offer-next {
+  right: 0; /* Position buttons at the edge of the padding */
+}
+
+/* Pagination Dots */
+.offer-pagination {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.pagination-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-dot.active {
+  background-color: #00796b;
+}
+
+/* Ensure footer specific rules override */
+footer {
+  background-color: #006e7f;
+  color: #fff;
+  padding: 60px 0 20px;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and larger phones (e.g., 768px and up) */
+@media (min-width: 768px) {
+  .hero h1,
+  .page-hero h1 {
+    font-size: 3.5em; /* Larger headings on tablets */
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 1.5em;
+  }
+
+  .who-we-are h2,
+  .blog-title,
+  .offerings h2,
+  .get-in-touch-banner h1,
+  .fun-facts h2 {
+    font-size: 3em;
+  }
+
+  /* Footer layout for tablets */
+  #footer .footer-content {
+    justify-content: space-around; /* Distribute columns better */
+  }
+}
+
+/* Laptops and Desktops (e.g., 1024px and up) */
+@media (min-width: 1024px) {
+  /* Navbar */
+  #navbar {
+    padding: 1.5em 2em; /* More padding on larger screens */
+  }
+
+  .nav-left {
+    flex-grow: 0; /* Don't force logo/brand to grow */
+  }
+
+  /* Hero sections */
+  .hero h1,
+  .page-hero h1 {
+    font-size: 4em; /* Even larger headings */
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 1.6em;
+  }
+
+  .who-we-are h2,
+  .blog-title,
+  .offerings h2,
+  .get-in-touch-banner h1,
+  .fun-facts h2 {
+    font-size: 3.5em;
+  }
+
+  /* Blog and Activities grids */
+  .blog-container,
+  .activities-container {
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns on large screens */
+  }
+
+  /* Activity Detail Layout */
+  .activity-header,
+  .activity-content {
+    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+  }
+
+  .activity-title {
+    flex: none; /* Don't want it to grow */
+    width: 300px; /* Specific width for title */
+  }
+  .activity-image {
+    flex: 1; /* Occupy remaining space */
+  }
+  .activity-description {
+    flex: 2; /* Main content takes more space */
+  }
+  .activity-sidebar {
+    flex: 1; /* Sidebar takes less space */
+  }
+
+  /* Offer Carousel */
+  .offer-carousel {
+    max-width: 1100px; /* Wider carousel */
+    padding: 0 60px; /* More space for buttons */
+  }
+
+  .offer-track {
+    justify-content: center; /* Center cards if fewer than can fill row */
+  }
+
+  .offer-carousel .card {
+    flex: 0 0 320px; /* Slightly larger cards */
+  }
+
+  .offer-prev {
+    left: 10px; /* Position further out */
+  }
+
+  .offer-next {
+    right: 10px; /* Position further out */
+  }
+
+  /* Footer layout for desktops */
+  #footer .footer-content {
+    justify-content: space-between; /* Evenly distribute columns */
+  }
+}
+
+/* Smaller devices (e.g., up to 767px) */
+@media (max-width: 767px) {
+  .logo {
+    height: 40px; /* Smaller logo on small screens */
+  }
+
+  .brand-name {
+    font-size: 2em; /* Smaller brand name on small screens */
+  }
+
+  #navbar {
+    flex-direction: column; /* Stack logo/brand and nav links */
+    align-items: flex-start; /* Align content to the left */
+    padding: 1em;
+  }
+
+  .nav-left {
+    margin-bottom: 1em; /* Space between logo/brand and nav links */
+  }
+
+  #navbar ul {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 0.5em;
+    width: 100%; /* Full width for stacked nav items */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  #navbar ul li {
+    width: 100%; /* Make each nav item take full width */
+  }
+
+  #navbar ul li a {
+    display: block; /* Make links block-level for full-width clicks */
+    text-align: center; /* Center text within the full-width link */
+    padding: 0.8em 1em; /* More vertical padding for easier tapping */
+  }
+
+  .hero,
+  .page-hero {
+    height: 400px; /* Shorter hero sections on small screens */
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 2em; /* Smaller heading text */
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 1em; /* Smaller paragraph text */
+  }
+
+  section {
+    padding: 2em 1em; /* Less padding on small screens */
+  }
+
+  .who-we-are h2,
+  .blog-title,
+  .offerings h2,
+  .get-in-touch-banner h1,
+  .fun-facts h2 {
+    font-size: 2em;
+  }
+
+  .blog-container,
+  .activities-container {
+    grid-template-columns: 1fr; /* Single column layout for cards */
+  }
+
+  .filters {
+    flex-direction: column; /* Stack filters vertically */
+    align-items: stretch; /* Stretch filters to full width */
+  }
+
+  .filter-group {
+    width: 100%; /* Full width for filter groups */
+  }
+
+  /* Activity detail page stacking */
+  .activity-header,
+  .activity-content {
+    flex-direction: column; /* Stack header and content vertically */
+    gap: 20px;
+  }
+
+  .activity-title,
+  .activity-image,
+  .activity-description,
+  .activity-sidebar {
+    min-width: unset; /* Remove min-width constraints */
+    width: 100%; /* Take full width */
+  }
+
+  .activity-sidebar {
+    margin-top: 20px; /* Space above sidebar when stacked */
+  }
+
+  /* Offer carousel adjustments for small screens */
+  .offer-carousel {
+    max-width: 90%; /* Adjust width to fit */
+    padding: 0; /* Remove padding */
+  }
+
+  .offer-track {
+    flex-wrap: nowrap; /* Keep cards in a single row for swiping/scrolling */
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Snap to cards */
+    padding-bottom: 20px; /* Ensure space for scrollbar/pagination */
+  }
+
+  .offer-carousel .card {
+    flex: 0 0 85%; /* Make cards take most of the screen width */
+    margin-right: 1.5em; /* Adjusted margin */
+    scroll-snap-align: start; /* Align to start of card when snapping */
+  }
+
+  .offer-prev,
+  .offer-next {
+    display: none; /* Hide navigation buttons on small screens if using swipe */
+  }
+
+  .offer-pagination {
+    margin-top: 1em; /* Adjust margin */
+  }
+
+  /* Footer adjustments for small screens */
+  #footer .footer-content {
+    flex-direction: column; /* Stack footer columns */
+    align-items: flex-start; /* Align content to the left */
+    gap: 1.5em;
+  }
+
+  #footer .footer-content > div {
+    flex: none; /* Reset flex grow/shrink */
+    width: 100%; /* Make each footer section full width */
+    max-width: none;
+  }
+
+  #footer .footer-bottom {
+    text-align: center; /* Center copyright on small screens */
+  }
+}
+
+/* Even smaller devices (e.g., 480px and down) */
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.8em; /* Even smaller brand name */
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 0.9em;
+  }
+
+  .popup-content {
+    padding: 20px; /* Less padding for very small screens */
+    border-radius: 10px; /* Less aggressive rounding */
+  }
+}
+
+/* Add to your css/style.css */
+
+.info-card .btn.contact-btn {
+  display: inline-block; /* Makes the button behave like a block for padding/margin */
+  background-color: #007bff; /* Example blue, match your brand color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 15px; /* Spacing from the paragraph above */
+  transition: background-color 0.3s ease;
+}
+
+.info-card .btn.contact-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

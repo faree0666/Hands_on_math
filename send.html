@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Us a Message</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="nav-left">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+        <span class="brand-name">Hands-on Math!</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="activities/index.html">Activities</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="get-in-touch-banner">
+        <div class="container">
+          <h1>Send Us a Message</h1>
+          <p>
+            Got a question, feedback, or a special request? Fill out the form
+            below, and we'll get back to you as soon as possible!
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container">
+          <div class="contact-form-container">
+            <h2>Your Inquiry</h2>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name*</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject*</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="activities">Activities Question</option>
+                  <option value="classes">In-Person Classes</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message*</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <label for="newsletter"
+                  >Subscribe to our newsletter for updates on new activities and
+                  resources.</label
+                >
+              </div>
+
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>Hands-on Math</h2>
+            <p>Making math engaging and meaningful for every child.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="activities/index.html">Activities</a></li>
+              <li><a href="blog/index.html">Blog</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a
+                href="https://instagram.com/handsonmath.prarambh/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://wa.me/917022826788" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Hands-on Math. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+  </body>
+</html>
