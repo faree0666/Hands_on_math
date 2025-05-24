@@ -274,6 +274,96 @@ section {
   width: 100%; /* Make select boxes take full width of their group */
 }
 
+.activity-card {
+  background-color: #ffffff;
+  border: 2px solid #002244;
+  border-radius: 15px;
+  padding: 1.5em; /* Keep your existing padding */
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+
+  /* --- IMPORTANT FLEXBOX ADDITIONS --- */
+  display: flex; /* Make the card itself a flex container */
+  flex-direction: column; /* Stack its children (image, content) vertically */
+  height: auto; /* Ensure the card's height adjusts to its content */
+  /* Remove any fixed height or max-height that might be here */
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+}
+
+.activity-image {
+  position: relative;
+  /* Keep image max-width 100% */
+  /* Add a fixed height for images to ensure uniformity, with object-fit */
+  height: 200px; /* Consistent height for images */
+  overflow: hidden; /* Important for object-fit */
+  margin-bottom: 1em; /* Space below image */
+  border-radius: 10px; /* Keep image border-radius */
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%; /* Make image fill its container */
+  object-fit: cover; /* This crops the image to fit without stretching */
+}
+
+.activity-content {
+  padding: 0; /* Remove padding here as it's on the card itself */
+  flex-grow: 1; /* Allow this content area to take up available space within the card */
+  display: flex; /* Make the content area a flex container */
+  flex-direction: column; /* Stack items inside vertically */
+  justify-content: space-between; /* Distribute space: title, tags, paragraph, button */
+  text-align: left; /* Align content to the left within the card */
+}
+
+.activity-content h3 {
+  color: #006e7f;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.activity-content p {
+  /* Allow paragraph to take up remaining space and push button down */
+  flex-grow: 1;
+  margin-bottom: 20px; /* Space before the button */
+  line-height: 1.5; /* Improve readability */
+
+  /* --- Optional: Limit paragraph lines if descriptions are very long --- */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines of text */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add "..." for truncated text */
+}
+
+/* Ensure the button is always at the bottom of the content area */
+.activity-content .btn {
+  margin-top: auto; /* This is the key: pushes the button to the bottom */
+  align-self: center; /* Center the button horizontally if it's smaller than the card */
+}
+
+/* Ensure activities-grid has sufficient padding and no height limits */
+.activities-grid {
+    padding: 40px 0 80px; /* Ensure ample vertical padding for the entire grid section */
+}
+
+@media (min-width: 1024px) {
+    .activities-container {
+        grid-template-columns: repeat(3, 1fr); /* This is good for 3 columns */
+        gap: 30px; /* Consistent gap */
+    }
+}
+
+
 /* Activities Grid */
 .activities-grid {
   padding: 20px 0 80px;
