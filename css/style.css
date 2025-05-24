@@ -278,7 +278,7 @@ section {
   background-color: #ffffff;
   border: 2px solid #002244;
   border-radius: 15px;
-  padding: 1.5em; /* Keep your existing padding */
+  padding: 1.0em; /* Keep your existing padding */
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.07);
   transition: transform 0.3s ease;
